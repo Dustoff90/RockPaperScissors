@@ -1,0 +1,63 @@
+import random
+import time
+
+while True:
+    print("\nMake your choice (Type 'exit' to close terminal):", end=" ")
+
+#What you input will be the guess var.
+    guess = str(input())
+    guess = guess.lower()
+
+#Choices to pick from.
+    choices = ['rock', 'paper', 'scissors']
+
+#Computer picks from choices var randomly.
+    computer_guess = random.choice(choices)
+
+#If you type exit, well... you exit.
+    if guess == 'exit':
+        exit()
+
+#Delays when Rock, Paper, Scissors is said.
+    time.sleep(0.55)
+    print("Rock")
+    time.sleep(0.55)
+    print("Paper")
+    time.sleep(0.55)
+    print("Scissors")
+    time.sleep(0.55)
+    print("Now!")
+
+#Displays the choices
+    print("\nYou chose:", guess)
+    print("Computer chose:", computer_guess)
+
+#Checks all choices if you input invalid choice you try again.
+    if guess in choices:
+
+#Picks your guess that you inputed from one of the choices.
+        if guess in choices:
+
+#If your guess equals computer's guess it's a tie.
+            if guess == computer_guess:
+                print("\nIt's a tie!")
+
+            elif guess == 'rock':
+                if computer_guess == 'paper':
+                    print("\nYou lose, Game over!")
+            elif computer_guess == 'scissors':
+                    print("\nYou win!")
+            elif guess == 'paper':
+                if computer_guess == 'rock':
+                    print("\nYou win!")
+            elif computer_guess == 'scissors':
+                    print("\nYou lose, Game over!")
+            elif guess == 'scissors':
+                if computer_guess == 'paper':
+                    print("\nYou win!")
+            elif computer_guess == 'rock':
+                    print("\nYou lose, Game over!")
+
+#If selected choice isnt listed this pops up.
+    else:
+        print("\nThat choice isn't valid, please try again. (Hint: Rock, Paper, or Scissors.)")
